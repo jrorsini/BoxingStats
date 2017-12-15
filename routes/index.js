@@ -11,13 +11,7 @@ request('http://boxrec.com/en/boxer/' + boxer_id, (err, res, html) => {
   const boxer_data = {
 
   };
-  const boxer_fight = {
-    date,
-    opponent_name,
-    opponent_stats,
-    result,
-    type
-  }
+  const boxer_fight = { date, opponent_name, opponent_stats, result, type }
   let data = '';
   if(!err) {
     fs.writeFile('public/data/' + boxer_id + '.json', [JSON.stringify(data)], err => {
