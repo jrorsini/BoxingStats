@@ -9,16 +9,19 @@ const boxer_id = 474
 request('http://boxrec.com/en/boxer/' + boxer_id, (err, res, html) => {
   const $ = cheerio.load(html)
   let boxer_data = {
-    fight_list: undefined
+    fight_list: []
   };
-  let fight_list = {}
+  let fight = {
+    fight_date: undefined
+  };
   let fight_date;
   let data;
   if(!err) {
 
     // const boxer_fight = { date, opponent_name, opponent_stats, result, type }
     $('.dataTable tr').map((e, i) => {
-      boxer_data.fight_date = $('.dataTable tr').eq(6).children().eq(1).text().trim()
+      fight.fight_date = $('.dataTable tr').eq(6).children().eq(1).text().trim();
+      boxer_data.fight_list.push(fight)
     })
     // $('.dataTable tr').eq(6).children().eq(1).text().trim()
 
