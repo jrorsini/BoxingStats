@@ -11,28 +11,30 @@ request('http://boxrec.com/en/boxer/' + boxer_id, (err, res, html) => {
   let boxer_data = {
     fight_list: []
   };
-  let fight = {
-    fight_date: undefined
-  };
-  let fight_date;
+  let fight 
   let data;
   if(!err) {
-
     // const boxer_fight = { date, opponent_name, opponent_stats, result, type }
     $('.dataTable tr').map((e, i) => {
-      fight.fight_date = $('.dataTable tr').eq(6).children().eq(1).text().trim();
+      fight = {
+        fight_date: $('.dataTable tr').eq(e).children().eq(1).text().trim(),
+        opponent_name: $('.dataTable tr').eq(e).children().eq(3).text().replace(/\d/g,'').trim(),
+        result: $('.dataTable tr').eq(e).children().eq(7).text().replace('\n','').trim(),
+        score: $('.dataTable tr').eq(e).children().eq(8).text().replace(/[\n\/\d]/g,'').trim(),
+        round: $('.dataTable tr').eq(e).children().eq(8).text().replace(/[\nA-Z]/g,'').trim()
+      };
       boxer_data.fight_list.push(fight)
     })
-    // $('.dataTable tr').eq(6).children().eq(1).text().trim()
-
 
     data = '[' + JSON.stringify(boxer_data)+ ']';
-    
-    fs.writeFile('public/data/' + boxer_id + '.json', data , err => {
-      if(!err) {
-        console.log('File for boxer ' + boxer_id + ' saved!')
-      }
-    })
+
+    if(data.length < 1000) {
+      fs.writeFile('public/data/' + boxer_id + '.json', data , err => {
+        if(!err) {
+          console.log('File for boxer ' + boxer_id + ' saved!')
+        }
+      })
+    }
   }
 });
 
