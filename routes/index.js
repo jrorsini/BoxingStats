@@ -8,13 +8,24 @@ const boxer_id = 474
 
 request('http://boxrec.com/en/boxer/' + boxer_id, (err, res, html) => {
   const $ = cheerio.load(html)
-  const boxer_data = {
-
+  let boxer_data = {
+    fight_list: undefined
   };
-  const boxer_fight = { date, opponent_name, opponent_stats, result, type }
-  let data = '';
+  let fight_list = {}
+  let fight_date;
+  let data;
   if(!err) {
-    fs.writeFile('public/data/' + boxer_id + '.json', [JSON.stringify(data)], err => {
+
+    // const boxer_fight = { date, opponent_name, opponent_stats, result, type }
+    $('.dataTable tr').map((e, i) => {
+      boxer_data.fight_date = $('.dataTable tr').eq(6).children().eq(1).text().trim()
+    })
+    // $('.dataTable tr').eq(6).children().eq(1).text().trim()
+
+
+    data = '[' + JSON.stringify(boxer_data)+ ']';
+    
+    fs.writeFile('public/data/' + boxer_id + '.json', data , err => {
       if(!err) {
         console.log('File for boxer ' + boxer_id + ' saved!')
       }
