@@ -10,12 +10,19 @@ let boxer_data = {
   fight_list: []
 };
 let fight;
-let data;
+
 
 let fight_list = () => {
-  var fight_list = [];
+  let boxer = {
+    firstname: $('.singleColumn h1').text(),
+    wins: $('.profileTablePhoto .bgW').text(),
+    KOs: $('.profileTablePhoto .textWon').text(),
+    loss: $('.profileTablePhoto .bgL').text(),
+    KOd: $('.profileTablePhoto .textLost').text(),
+    draws: $('.profileTablePhoto .bgD').text(),
+    fight_list: []
+  }
   $('.dataTable .drawRowBorder').map((e, i) => {
-      const points = $('.dataTable .drawRowBorder').eq(e).children().eq(3).text().trim().split('➞')[1]
       fight = {
         fight_date: $('.dataTable .drawRowBorder').eq(e).children().eq(1).text().trim(),
         weight: $('.dataTable .drawRowBorder').eq(e).children().eq(2).text().trim(),
@@ -23,13 +30,15 @@ let fight_list = () => {
         opponent_stats: $('.dataTable .drawRowBorder').eq(e).children().eq(5).text().replace(/[A-Za-z\n]/g,'').trim().split(/\s/g),
         result: $('.dataTable .drawRowBorder').eq(e).children().eq(11).text().trim(),
         score: $('.dataTable .drawRowBorder').eq(e).children().eq(12).text().replace(/[\n\/\d]/g,'').trim(),
-        round: $('.dataTable .drawRowBorder').eq(e).children().eq(12).text().replace(/[\nA-Z]/g,'').trim(),
-        points: Number(points.replace(',',''))
+        round: $('.dataTable .drawRowBorder').eq(e).children().eq(12).text().replace(/[\nA-Z]/g,'').trim().split('/')[0],
+        points: Number($('.dataTable .drawRowBorder').eq(e).children().eq(3).text().trim().split('➞')[1].replace(',',''))
       };
-      fight_list.push(fight);
+      boxer.fight_list.push(fight);
   });
-  console.table(fight_list);
+  document.body.innerHTML = JSON.stringify(boxer);
 };
+
+fight_list()
 
 
 
