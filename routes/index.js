@@ -4,17 +4,10 @@ var fs = require('fs');
 var request = require('request')
 var cheerio = require('cheerio');
 
-const boxer_id = 474;
 
-let boxer_data = {
-  fight_list: []
-};
-let fight;
-
-
-let fight_list = () => {
+let fighter = () => {
   let boxer = {
-    firstname: $('.singleColumn h1').text(),
+    name: $('.singleColumn h1').text(),
     wins: $('.profileTablePhoto .bgW').text(),
     KOs: $('.profileTablePhoto .textWon').text(),
     loss: $('.profileTablePhoto .bgL').text(),
@@ -37,12 +30,6 @@ let fight_list = () => {
   });
   document.body.innerHTML = JSON.stringify(boxer);
 };
-
-fight_list()
-
-
-
-
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
