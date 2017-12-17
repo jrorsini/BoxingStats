@@ -6,3 +6,27 @@ body {
 a {
   color: #00B7FF;
 }
+
+#popularity li {    
+  list-style: none;
+  float: left;
+  width: 100%;
+  height: 7px;
+}
+
+#popularity li:hover {
+  opacity: 0.6;
+}
+
+#popularity span.lvl {
+  display: inline-block;
+  background-color: #78909c;
+  height: 6px;
+}
+
+#popularity span.fight--W {
+  background-color: #4caf50;
+}
+#popularity span.fight--L {
+  background-color: #e53935;
+}

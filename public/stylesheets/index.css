@@ -1,0 +1,12 @@
+#popularity li {
+    list-style: none;
+    display: inline-block;
+    height: 5px;
+}
+
+#popularity .fight--W {
+    background-color: #4caf50;
+}
+#popularity .fight--L {
+    background-color: #e53935;
+}
