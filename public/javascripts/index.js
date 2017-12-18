@@ -8,7 +8,7 @@ let fillPts = () => {
         ptsArr.push(e.points);
     });
     max = Math.max(...ptsArr);
-    let title = `<h1>${data.name}</h1>`
+    let title = `<h1>${data.name} <small>(Peaked to ${max} pts)</small></h1>`
     let markup = `
         <ul id="popularity">
             ${data.fight_list.map(
@@ -29,9 +29,9 @@ let fillPts = () => {
             }
         </ul>
     `
-    document.body.innerHTML = title+markup;
+    document.body.innerHTML = title + markup;
 }
 
-let boxers = 
+let boxers = []
 
 fillPts()
