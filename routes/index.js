@@ -30,7 +30,7 @@ let fighter = () => {
   });
   document.body.innerHTML = JSON.stringify(boxer);
 };
-fighter()
+//fighter()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

@@ -1,16 +1,24 @@
 
 let fillPts = () => {
+    let max;
+    let ptsArr = []
     const ptsList = document.getElementById('popularity');
     document.getElementById('boxerName').innerText = data.name;
     data.fight_list.reverse().map(e => {
-        const outerNnode = document.createElement('li');
-        const innerNnode = document.createElement('span');
-        innerNnode.classList.add('lvl');
-        innerNnode.classList.add('fight--' + e.result);
-        innerNnode.setAttribute("style", "width:" + e.points + 'px');
-        outerNnode.appendChild(innerNnode);
-        ptsList.appendChild(outerNnode); 
+        ptsArr.push(e.points);
     });
+    max = Math.max(...ptsArr);
+    
+    let markup = `
+        <ul id="popularity">
+            ${data.fight_list.reverse().map(
+                e => `<li><span class="lvl fight--${e.result}" style="width:${e.points}px"></span><li>`
+            ).join('')
+            }
+        </ul>
+    `
+
+    document.body.innerHTML = markup;
 }
 
 fillPts()
