@@ -9,8 +9,8 @@ a {
 
 #popularity {
   display: inline-block;
-  height: 120px;
-  margin-top: 100px;
+  height: 200px;
+  margin-top: 20px;
 }
 
 #popularity li {    
@@ -25,18 +25,27 @@ a {
   opacity: 0.6;
 }
 
+h1 {
+  display: inline-block;
+  width: 100%;
+  float: left;
+}
 
 .figther_modal {
-  opacity: 0;
+  display: none;
   position: absolute;
-  top: -100px;
+  top: 0px;
   font-size: 0.688rem;
   line-height: 1;
-  width: 300px;
+  width: 200px;
+}
+
+.figther_modal p {
+  margin: 0;
 }
 
 #popularity li:hover .figther_modal {
-  opacity: 1;
+  display: inline-block;
 }
 
 #popularity span.lvl {
@@ -54,3 +63,11 @@ a {
 #popularity span.fight--L {
   background-color: #e53935;
 }
+
+.opponent-s_records {
+  font-weight: bold;
+}
+
+.figther_modal .opW {color: #4caf50}
+.figther_modal .opL {color: #e53935;}
+.figther_modal .opD {color: #80d8ff;}
