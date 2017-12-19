@@ -26,7 +26,7 @@ let fillPts = () => {
                     <div class="figther_modal">
                         <p>${e.fight_date}</p>
                         <div>
-                            <p><b>${data.name}</b></p>
+                            <p><b>${data.name}</b> (${e.points})</p>
                             <p class="opponent-s_records">
                                 <span class="opW">${e.result === 'W' ? wins += 1 : wins }</span>
                                 <span class="opL">${e.result === 'L' ? losses += 1 : losses }</span>
