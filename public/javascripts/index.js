@@ -1,3 +1,9 @@
+let boxersList = [
+    {
+        id: 1,
+        name:''
+    }
+];
 
 let fillPts = () => {
     let max;
