@@ -5,6 +5,7 @@ let boxersList = [
     }
 ];
 
+
 let fillPts = () => {
     let max;
     let ptsArr = [];
