@@ -1,68 +1,20 @@
 let boxersList = [
-    {
-        id: 150,
-        name:'BoxerName'
-    },
-    {
-        id: 168,
-        name:'BoxerName'
-    },
-    {
-        id: 180,
-        name:'BoxerName'
-    },
-    {
-        id: 262,
-        name:'BoxerName'
-    },
-    {
-        id: 320,
-        name:'BoxerName'
-    },
-    {
-        id: 405,
-        name:'BoxerName'
-    },
-    {
-        id: 474,
-        name:'BoxerName'
-    },
-    {
-        id: 499,
-        name:'BoxerName'
-    },
-    {
-        id: 584,
-        name:'BoxerName'
-    },
-    {
-        id: 803,
-        name:'BoxerName'
-    },
-    {
-        id: 1286,
-        name:'BoxerName'
-    },
-    {
-        id: 1465,
-        name:'BoxerName'
-    },
-    {
-        id: 1640,
-        name:'BoxerName'
-    },
-    {
-        id: 1853,
-        name:'BoxerName'
-    },
-    {
-        id: 2463,
-        name:'BoxerName'
-    },
-    {
-        id: 9031,
-        name:'BoxerName'
-    },
+    {id: 150,name:'Larry Holmes'},
+    {id: 168,name:'Ken Norton'},
+    {id: 180,name:'Muhammad Ali'},
+    {id: 262,name:'BoxerName'},
+    {id: 320,name:'BoxerName'},
+    {id: 405,name:'BoxerName'},
+    {id: 474,name:'BoxerName'},
+    {id: 499,name:'BoxerName'},
+    {id: 584,name:'BoxerName'},
+    {id: 803,name:'BoxerName'},
+    {id: 1286,name:'BoxerName'},
+    {id: 1465,name:'BoxerName'},
+    {id: 1640,name:'BoxerName'},
+    {id: 1853,name:'BoxerName'},
+    {id: 2463,name:'BoxerName'},
+    {id: 9031,name:'BoxerName'},
 ];
 
 let linkListMarkup = `
