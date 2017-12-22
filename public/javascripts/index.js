@@ -1,9 +1,78 @@
 let boxersList = [
     {
-        id: 1,
-        name:''
-    }
+        id: 150,
+        name:'BoxerName'
+    },
+    {
+        id: 168,
+        name:'BoxerName'
+    },
+    {
+        id: 180,
+        name:'BoxerName'
+    },
+    {
+        id: 262,
+        name:'BoxerName'
+    },
+    {
+        id: 320,
+        name:'BoxerName'
+    },
+    {
+        id: 405,
+        name:'BoxerName'
+    },
+    {
+        id: 474,
+        name:'BoxerName'
+    },
+    {
+        id: 499,
+        name:'BoxerName'
+    },
+    {
+        id: 584,
+        name:'BoxerName'
+    },
+    {
+        id: 803,
+        name:'BoxerName'
+    },
+    {
+        id: 1286,
+        name:'BoxerName'
+    },
+    {
+        id: 1465,
+        name:'BoxerName'
+    },
+    {
+        id: 1640,
+        name:'BoxerName'
+    },
+    {
+        id: 1853,
+        name:'BoxerName'
+    },
+    {
+        id: 2463,
+        name:'BoxerName'
+    },
+    {
+        id: 9031,
+        name:'BoxerName'
+    },
 ];
+
+let linkListMarkup = `
+    <ul>
+        ${boxersList.map(e => `
+            <li><a href='${e.id}'>${e.name}</a></li>
+        `).join('')}
+    </ul>
+`;
+
 
 
 let fillPts = () => {
@@ -52,7 +121,7 @@ let fillPts = () => {
             }
         </ul>
     `
-    document.body.innerHTML = title + markup;
+    document.body.innerHTML = linkListMarkup + title + markup;
 }
 
 let boxers = []
