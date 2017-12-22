@@ -9,8 +9,8 @@ a {
 
 #popularity {
   display: inline-block;
-  height: 200px;
-  margin-top: 20px;
+  height: 110px;
+  margin-top: 120px;
   padding: 0;
   border-left: 1px solid grey;
   border-bottom: 1px solid grey;
@@ -38,7 +38,7 @@ h1 {
 .figther_modal {
   display: none;
   position: absolute;
-  top: 0px;
+  top: -100px;
   font-size: 0.688rem;
   line-height: 1;
   width: 200px;
@@ -75,3 +75,7 @@ h1 {
 .figther_modal .opW {color: #4caf50}
 .figther_modal .opL {color: #e53935;}
 .figther_modal .opD {color: #80d8ff;}
+
+.boxers_link_list {
+  list-style: none;
+}

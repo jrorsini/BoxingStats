@@ -1,5 +1,5 @@
 let linkListMarkup = `
-    <ul>
+    <ul class="boxers_link_list">
         ${boxersList.map(e => `
             <li><a href='/${e.id}'>${e.name}</a></li>
         `).join('')}
