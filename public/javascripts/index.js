@@ -12,9 +12,9 @@ let boxersList = [
     {id: 1286,name:'Michael Spinks'},
     {id: 1465,name:'Tommy Morrison'},
     {id: 1640,name:'Riddick Bowe'},
-    {id: 1853,name:'BoxerName'},
-    {id: 2463,name:'BoxerName'},
-    {id: 9031,name:'BoxerName'},
+    {id: 1853,name:'Lennox Lewis'},
+    {id: 2463,name:'Gerry Cooney'},
+    {id: 9031,name:'Sonny Liston'},
 ];
 
 let linkListMarkup = `

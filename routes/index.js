@@ -39,8 +39,8 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/:boxerId', function(req, res, next) {
-  console.log(req.params)
-  res.render('index', {'boxerId': req.params});
+  console.log(req.params.boxerId)
+  res.render('index', {'boxerId': `data/${req.params.boxerId}.js`});
 });
 
 module.exports = router;
