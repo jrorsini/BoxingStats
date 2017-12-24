@@ -57,7 +57,7 @@ let fillPts = () => {
                         </div>
                         <p>
                             <b class="op${e.result}">
-                                ${e.result === 'W' ? 'Won' : e.result === 'W' ? 'Lost' : 'Draw'}
+                                ${e.result === 'W' ? 'Won' : e.result === 'L' ? 'Lost' : 'Draw'}
                             </b> 
                             by 
                             <b>${e.score}</b> 
