@@ -79,3 +79,7 @@ h1 {
 .boxers_link_list {
   list-style: none;
 }
+
+.boxerLink--hide {
+  display: none;
+}

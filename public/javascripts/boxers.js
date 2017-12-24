@@ -1,10 +1,20 @@
 let linkListMarkup = `
+    <input type='text' id='boxerFilter' placeholder='Filter' onkeyup="filterBoxers()">
     <ul class="boxers_link_list">
         ${boxersList.map(e => `
-            <li><a href='/${e.id}'>${e.name}</a></li>
+            <li id='boxer${e.id}' ><a href='/${e.id}'>${e.name}</a></li>
         `).join('')}
     </ul>
 `;
+
+let filterBoxers = () => {
+    const re = new RegExp(document.getElementById('boxerFilter').value, 'gi')
+    boxersList.map(e => {
+        const boxerLinkEl = document.getElementById(`boxer${e.id}`);
+        console.log(boxerLinkEl)
+        e.name.match(re) === null ? boxerLinkEl.classList.add('boxerLink--hide') : boxerLinkEl.classList.remove('boxerLink--hide');
+    })
+}
 
 let fillPts = () => {
     let max;
@@ -18,7 +28,7 @@ let fillPts = () => {
         ptsArr.push(e.points);
     });
     max = Math.max(...ptsArr);
-    let title = `<h1>${data.name} <small>(Peaked to ${max} pts)</small></h1>`
+    let title = `<h1>${data.name} <small>(Peaked at ${max} pts)</small></h1>`
     let markup = `
         <ul id="popularity">
             ${data.fight_list.map(
@@ -45,7 +55,15 @@ let fillPts = () => {
                                 </p>
                             </section>
                         </div>
-                        <p><b class="op${e.result}">${e.result === 'W' ? 'Won' : 'Lost'}</b> by <b>${e.score}</b> in round <b>${e.round}</b></p>
+                        <p>
+                            <b class="op${e.result}">
+                                ${e.result === 'W' ? 'Won' : e.result === 'W' ? 'Lost' : 'Draw'}
+                            </b> 
+                            by 
+                            <b>${e.score}</b> 
+                            in round 
+                            <b>${e.round}</b>
+                        </p>
                     </div>
                 </li>`
             ).join('')
